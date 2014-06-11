@@ -1,7 +1,8 @@
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES:= bt-io.c \
+LOCAL_SRC_FILES:= bt-core.c \
+                  bt-io.c \
                   bt-pdubuf.c \
                   bt-proto.c \
                   core.c \
@@ -11,7 +12,7 @@ LOCAL_SRC_FILES:= bt-io.c \
                   service.c \
                   task.c
 LOCAL_CFLAGS := -DANDROID_VERSION=$(PLATFORM_SDK_VERSION)
-LOCAL_SHARED_LIBRARIES := libcutils liblog
+LOCAL_SHARED_LIBRARIES := libcutils libhardware liblog
 LOCAL_MODULE:= bluetoothd
 LOCAL_MODULE_PATH := $(TARGET_OUT_EXECUTABLES)
 LOCAL_MODULE_TAGS := eng
