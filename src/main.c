@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include "loop.h"
 #include "task.h"
+#include "bt-io.h"
 
 static int
 init(void* data)
@@ -13,7 +14,12 @@ init(void* data)
   if (init_task_queue() < 0)
     goto err_init_task_queue;
 
+  if (init_bt_io() < 0)
+    goto err_init_bt_io;
+
   return 0;
+err_init_bt_io:
+  uninit_task_queue();
 err_init_task_queue:
   return -1;
 }
