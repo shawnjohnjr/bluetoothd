@@ -1,7 +1,8 @@
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES:= bt-proto.c \
+LOCAL_SRC_FILES:= bt-pdubuf.c \
+                  bt-proto.c \
                   loop.c \
                   main.c \
                   task.c
