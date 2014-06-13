@@ -4,6 +4,7 @@
 
 #include "bt-proto.h"
 #include "bt-core-io.h"
+#include "bt-sock-io.h"
 #include "core-io.h"
 #include "service.h"
 
@@ -12,9 +13,11 @@ bt_status_t (*service_handler[256])(const struct pdu*);
 register_func
   (* const register_service[256])(unsigned char, void (*)(struct pdu_wbuf*)) = {
   /* SERVICE_CORE is special and not handled here */
-  [SERVICE_BT_CORE] = register_bt_core
+  [SERVICE_BT_CORE] = register_bt_core,
+  [SERVICE_BT_SOCK] = register_bt_sock
 };
 
 int (*unregister_service[256])() = {
-  [SERVICE_BT_CORE] = unregister_bt_core
+  [SERVICE_BT_CORE] = unregister_bt_core,
+  [SERVICE_BT_SOCK] = unregister_bt_sock
 };
