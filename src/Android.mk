@@ -5,6 +5,7 @@ LOCAL_SRC_FILES:= bt-pdubuf.c \
                   bt-proto.c \
                   loop.c \
                   main.c \
+                  service.c \
                   task.c
 LOCAL_CFLAGS := -DANDROID_VERSION=$(PLATFORM_SDK_VERSION)
 LOCAL_SHARED_LIBRARIES := libcutils liblog
