@@ -4,6 +4,7 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES:= bt-pdubuf.c \
                   bt-proto.c \
                   core.c \
+                  core-io.c \
                   loop.c \
                   main.c \
                   service.c \
